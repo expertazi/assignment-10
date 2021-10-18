@@ -1,0 +1,29 @@
+.global-cart {
+  background-color: white;
+  border-radius: 25px;
+}
+.cart-num-1 {
+  height: 350px;
+  background-image: url(https://osudpotro.com/assets/images/delivery-service-new.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 10px;
+}
+.cart-num-2 {
+  height: 350px;
+  background-image: url(https://osudpotro.com/assets/images/online-doctor.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 380px 210px;
+  padding: 10px;
+}
+.cart-num-3 {
+  height: 350px;
+  background-image: url(https://osudpotro.com/assets/images/call-center.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 10px;
+}
+.btn-global-cart {
+  margin-top: 240px;
+}
