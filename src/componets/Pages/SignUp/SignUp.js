@@ -123,7 +123,11 @@ const SignUp = () => {
                 <Form.Check
                   onChange={toggoleLogin}
                   type="checkbox"
-                  label="If You Already Have Account? Click Here To Login"
+                  label={
+                    isLogin
+                      ? "If You Already Have Account? Click Here To Login"
+                      : " If You dont Have Account? Click Here To Register"
+                  }
                 />
               </Form.Group>
               <div className="row mb-3 text-danger">{error}</div>
