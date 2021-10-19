@@ -6,7 +6,7 @@ import LastSec from "./LastSec/LastSec";
 
 const Home = () => {
   return (
-    <div>
+    <div id="home">
       <Slider></Slider>
       <SecondSec></SecondSec>
       <Medicines></Medicines>

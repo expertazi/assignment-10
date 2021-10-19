@@ -11,7 +11,7 @@ const Medicine = (props) => {
       <Card style={{ width: "100%", height: "450px" }}>
         <Card.Img variant="top" className="img-fluid h-50" src={img} />
         <Card.Body>
-          <h4 className="text-start">Price: {price} Taka</h4>
+          <h5 className="text-start">Price: {price} Taka</h5>
           <Card.Title className="text-start fw-bold">{name}</Card.Title>
           <p className="text-start buttom-margin-p">{generic}</p>
           <p className="text-start">By: {manufacturer}</p>

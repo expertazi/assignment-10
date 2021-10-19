@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import "./MedicineDeta.css";
 
 const MedicineDeta = () => {
   const { medicineData } = useParams();
@@ -11,22 +13,27 @@ const MedicineDeta = () => {
       .then((data) => setData(data));
   }, []);
 
-  const ExactIteam = data.filter((allData) => allData.id == medicineData);
-  console.log(medicineData);
-  console.log(ExactIteam);
+  const ExactIteam = data.filter((oneData) => oneData.id == medicineData);
   return (
     <div>
-      <h1>This is service Detail Page </h1>
-      <img src={ExactIteam[0]?.img} alt="" />
-      <h3>Name : {ExactIteam[0]?.name}</h3>
-      <h3>generic : {ExactIteam[0]?.generic}</h3>
-      <h3>manufacturer : {ExactIteam[0]?.manufacturer}</h3>
-      <h3>price : {ExactIteam[0]?.price}</h3>
-      <h3>description : {ExactIteam[0]?.description}</h3>
-      <Link to="/home">
-        <button className="btn btn-warning">Go Back Home</button>
-      </Link>
-      <button>Add To Cart</button>
+      <Container>
+        <Row>
+          <Col md={4}></Col>
+          <Col className="my-5 medicine-data" md={4}>
+            <h3>Medicine Name : {ExactIteam[0]?.name}</h3>
+            <img className="img-fluid" src={ExactIteam[0]?.img} alt="" />
+            <h3>Medicine Price : {ExactIteam[0]?.price}</h3>
+            <h5>generic : {ExactIteam[0]?.generic}</h5>
+            <p>manufacturer : {ExactIteam[0]?.manufacturer}</p>
+            <p>description : {ExactIteam[0]?.description}</p>
+            <Link to="/home">
+              <button className="btn btn-warning">Go Back Home</button>
+            </Link>
+            <button className="btn btn-warning ms-4">Add To Cart</button>
+          </Col>
+          <Col md={4}></Col>
+        </Row>
+      </Container>
     </div>
   );
 };

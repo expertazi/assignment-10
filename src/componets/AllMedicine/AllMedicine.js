@@ -1,16 +1,14 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Row } from "react-bootstrap";
 import Medicine from "../Medicine/Medicine";
 
-const Medicines = () => {
+const AllMedicine = () => {
   const [medicine, setMedicine] = useState([]);
   useEffect(() => {
     fetch("fakedata.json")
       .then((res) => res.json())
       .then((data) => setMedicine(data));
   }, []);
-
   return (
     <div className="container mb-5">
       <div id="Medicine">
@@ -26,4 +24,4 @@ const Medicines = () => {
   );
 };
 
-export default Medicines;
+export default AllMedicine;

@@ -10,12 +10,13 @@ import {
 import { Link } from "react-router-dom";
 import "./Header.css";
 import useAuth from "./../../contexts/useAuth";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
   const { user, logOut } = useAuth();
   console.log(user);
   return (
-    <div className="main-header">
+    <div className="main-header sticky-top">
       <Navbar sticky="top" bg="dark" expand="lg">
         <Container>
           <Navbar.Brand to="/home">
@@ -28,8 +29,13 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto d-flex align-items-center">
-              <Link to="/home">Home</Link>
+              <Nav.Link as={HashLink} to="/home">
+                Home
+              </Nav.Link>
+              <Link to="/allMedicine">Medicine</Link>
               <Link to="/contact">Contact</Link>
+              <Link to="/aboutUs">About Us</Link>
+              <Link to="/services">Services</Link>
               {user?.email ? (
                 <Button onClick={logOut} variant="dark">
                   Logout

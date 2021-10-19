@@ -11,6 +11,10 @@ import SignUp from "./componets/Pages/SignUp/SignUp";
 import AuthProvider from "./contexts/AuthProvider";
 import PrivateRoute from "./componets/Pages/Login/PrivateRoute/PrivateRoute";
 import Footer from "./componets/Footer/Footer";
+import Services from "./componets/Pages/Services/Services";
+import Medicines from "./componets/Medicines/Medicines";
+import AllMedicine from "./componets/AllMedicine/AllMedicine";
+import AboutUs from "./componets/Pages/AboutUs/AboutUs";
 
 function App() {
   return (
@@ -25,9 +29,19 @@ function App() {
             <Route exact path="/">
               <Home></Home>
             </Route>
+
+            <Route exact path="/allMedicine">
+              <AllMedicine></AllMedicine>
+            </Route>
             <Route exact path="/contact">
               <Contact></Contact>
             </Route>
+            <Route exact path="/aboutUs">
+              <AboutUs></AboutUs>
+            </Route>
+            <PrivateRoute exact path="/services">
+              <Services></Services>
+            </PrivateRoute>
             <Route exact path="/login">
               <Login></Login>
             </Route>
