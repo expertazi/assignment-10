@@ -42,12 +42,11 @@ function App() {
             <PrivateRoute exact path="/services">
               <Services></Services>
             </PrivateRoute>
+
             <Route exact path="/login">
-              <Login></Login>
-            </Route>
-            <Route exact path="/signup">
               <SignUp></SignUp>
             </Route>
+
             <PrivateRoute path="/medicineData/:medicineData">
               <MedicineDeta></MedicineDeta>
             </PrivateRoute>
