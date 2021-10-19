@@ -11,7 +11,7 @@ import {
 } from "firebase/auth";
 
 const SignUp = () => {
-  const { signinWithGoogle } = useAuth();
+  const { signinWithGoogle, user } = useAuth();
   const auth = getAuth();
 
   const location = useLocation();
@@ -47,7 +47,19 @@ const SignUp = () => {
       setError("Password msut Be At Least 6 Charastes Long.");
       return;
     }
-    isLogin ? proccessLogin(email, password) : createNewUser(email, password);
+    if (isLogin == false) {
+      proccessLogin(email, password);
+      history.push(redirect_uri);
+      if (user == true) {
+        history.push("/login-Success");
+      } else {
+        history.push("/home");
+      }
+    } else {
+      createNewUser(email, password);
+      history.push(redirect_uri);
+      history.push("/registration-Success");
+    }
   };
   const proccessLogin = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
@@ -78,8 +90,8 @@ const SignUp = () => {
       <h2 className="mb-5 fw-bold">
         Please{" "}
         {isLogin
-          ? " Login ! If you have account"
-          : "Register  ! If you dont have account"}
+          ? " Register ! If you dont have account"
+          : " Login  ! If you  have account"}
       </h2>
 
       <Container>
@@ -116,7 +128,7 @@ const SignUp = () => {
               </Form.Group>
               <div className="row mb-3 text-danger">{error}</div>
               <Button variant="primary" type="submit">
-                {isLogin ? "Login" : "Register"}
+                {isLogin ? " Register" : " Login"}
               </Button>
             </Form>
           </Col>

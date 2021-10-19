@@ -15,6 +15,8 @@ import Services from "./componets/Pages/Services/Services";
 import Medicines from "./componets/Medicines/Medicines";
 import AllMedicine from "./componets/AllMedicine/AllMedicine";
 import AboutUs from "./componets/Pages/AboutUs/AboutUs";
+import LogInSucces from "./componets/Pages/RedirectsPages/LogInSucces";
+import RegisterSuccess from "./componets/Pages/RedirectsPages/RegisterSuccess";
 
 function App() {
   return (
@@ -45,6 +47,12 @@ function App() {
 
             <Route exact path="/login">
               <SignUp></SignUp>
+            </Route>
+            <Route exact path="/login-Success">
+              <LogInSucces></LogInSucces>
+            </Route>
+            <Route exact path="/registration-Success">
+              <RegisterSuccess></RegisterSuccess>
             </Route>
 
             <PrivateRoute path="/medicineData/:medicineData">

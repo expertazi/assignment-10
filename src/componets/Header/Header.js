@@ -43,7 +43,7 @@ const Header = () => {
               ) : (
                 <Link to="/login">Login</Link>
               )}
-              <Navbar.Text> Signned in as: {user?.displayName}</Navbar.Text>
+              <Navbar.Text> Signned Email is : {user?.email}</Navbar.Text>
             </Nav>
           </Navbar.Collapse>
         </Container>
